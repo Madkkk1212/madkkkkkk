@@ -6,9 +6,9 @@ class Datapersediaan extends BaseController
 {
     public function index()
     {
-        // $data ['title'] = Distributor;
+        $data ['title'] = 'Data Persediaan';
 
-        return view('menu/datapersediaan', );
+        return view('datapersediaan/index', $data );
     }
 
 }

@@ -1,7 +1,7 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fa-solid fa-code"></i>
                 </div>
@@ -22,7 +22,7 @@
              <!-- divider -->
              <hr class="sidebar-diveder">
             <div class="sidebar-heading">
-            <font color="red">USER LIST</font><br>
+            <font color="white">USER LIST</font><br>
             </div>
             <!-- Nav Item - DATA USER -->
             <li class="nav-item">
@@ -34,7 +34,7 @@
 
             <!-- heading -->
             <div class="sidebar-heading">
-            <font color="red">MENU UTAMA</font><br>
+            <font color="white">MENU UTAMA</font><br>
             </div>
             </li>
             <!-- Nav Item - DATA PENJUALAN -->

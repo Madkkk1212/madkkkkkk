@@ -13,10 +13,9 @@ class Modeldatapenjualan extends Model
     {
       
           $builder = $this->db->table('datapenjualan');   
-          $builder->join('distributor', 'distributor.id = datapenjualan.id');   
+          $builder->join('datapelanggan', 'datapelanggan.id = datapelanggan.id');   
           $query = $builder->get();
           return $query->getResult();   
 
- 
     }
 }

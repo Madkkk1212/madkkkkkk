@@ -1,14 +1,43 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Modeldatakeluar;
+use App\Models\Modeldatamasuk;
+use App\Models\Modeldatapelanggan;
 
-class Datakeluar extends BaseController
+class datakeluar extends BaseController
 {
-    public function index()
-    {
-        // $data ['title'] = Distributor;
+        
+    protected $Modeldatakeluar;
+    protected $Modeldatamasuk;
+    protected $Modeldatapelanggan;
 
-        return view('menu/datakeluar', );
+    public function __construct()
+    {
+        $this->Modeldatakeluar = new \App\Models\Modeldatakeluar();
+        $this->Modeldatamasuk = new \App\Models\Modeldatamasuk();
+        $this->Modeldatapelanggan = new \App\Models\Modeldatapelanggan();
     }
+
+    public function index()
+    { 
+        $datakeluar = $this->Modeldatakeluar->findAll();
+        
+        $data  = [
+            'datakeluar' => $this->Modeldatakeluar->getAll()
+            
+        ];
+        $data ['title'] = 'datakeluar';
+
+
+        return view('datakeluar/index', $data );
+    }
+
+    public function hapus($id)
+    {
+        $this->Modeldatakeluar->Delete($id);
+        return redirect()->to('datakeluar/index');
+    }
+
 
 }

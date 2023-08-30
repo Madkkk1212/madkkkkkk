@@ -24,16 +24,27 @@ class Datapenjualan extends BaseController
         $data  = [
             'datapenjualan' => $this->Modeldatapenjualan->getAll($datapenjualan)
         ];
-
-        return view('menu/datapenjualan', $data );
+        $data ['title'] = 'Data Penjualan';
+        return view('datapenjualan/index', $data );
+        
     }
 
-    public function create()
+    public function save()
     {
-        $data = [
-            'title' => 'Form Tambah Data Distributor'
-        ];
+
         
-        return view('distributor/create', $data);
+        $this->Modeldatapenjualan->save([
+                'kodepelanggan' => $this->request->getVar('kodepelanggan'),
+                'kodebarang' => $this->request->getVar('kodebarang'),
+                'namabarang' => $this->request->getVar('namabarang'),
+                'harga' => $this->request->getVar('harga'),
+                'jumlah' => $this->request->getVar('jumlah'),
+                'totalharga' => $this->request->getVar('totalharga'),
+                'metodepembayaran' => $this->request->getVar('metodepembayaran'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+         
+            Session()->setFlashdata('pesan', 'DATA BERHASIL DITAMBAHKAN.');
+            return redirect()->to('/datapenjualan/index');
     }
 }

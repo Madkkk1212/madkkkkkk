@@ -53,10 +53,8 @@
             <footer class="sticky-footer bg-white">
             <div class="mt-auto p-2">
                     <div class=" text-right ">
-                    <a class="nav-link" href="index.html">
-                        
-                    <h1>About</h1></a>
-                        
+                    <a class="nav-link" href="/about/index">                   
+                    <h1>About</h1></a>                        
                 </footer>
             <!-- End of Footer -->
 

@@ -6,8 +6,9 @@ class User extends BaseController
 {
     public function index()
     {
+        $data ['title'] = 'user';
 
-        return view('user/index');
+        return view('user/index', $data);
     }
 
 

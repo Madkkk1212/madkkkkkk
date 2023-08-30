@@ -4,11 +4,36 @@ namespace App\Controllers;
 
 class Datapelanggan extends BaseController
 {
-    public function index()
+   
+    protected $Modeldatapelanggan;
+    public function __construct()
     {
-        // $data ['title'] = Distributor;
+        $this->Modeldatapelanggan = new \App\Models\Modeldatapelanggan();
+    }
 
-        return view('menu/datapelanggan', );
+    public function index()
+    { 
+        $datapelanggan = $this->Modeldatapelanggan->findAll();
+        
+        $data  = [
+            'datapelanggan' => $datapelanggan
+        ];
+        $data ['title'] = 'Data Pelanggan';
+        return view('datapelanggan/index', $data );
+    }
+        public function save()
+    {
+
+        
+        $this->Modeldatapelanggan->save([
+                'nama' => $this->request->getVar('nama'),
+                'nomortelepon' => $this->request->getVar('nomortelepon'),
+                'alamat' => $this->request->getVar('alamat'),
+                'kodepelanggan' => $this->request->getVar('kodepelanggan')
+            ]);
+         
+            Session()->setFlashdata('pesan', 'DATA BERHASIL DITAMBAHKAN.');
+            return redirect()->to('/datapelanggan/index');
     }
 
 }
